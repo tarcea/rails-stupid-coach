@@ -1,0 +1,16 @@
+<h1>Stupid Coaching</h1>
+<!-- <p>Find me in app/views/questions/answer.html.erb</p> -->
+
+<!-- If the message is I am going to work, the coach will answer Great!
+If the message has a question mark ? at the end, the coach will answer Silly question, get dressed and go to work!.
+Otherwise she/he will answer I don't care, get dressed and go to work! -->
+<h4>You</h4>
+<%= @message %>
+<h4>Your coach</h4>
+<% if @message == 'I am going to work'%>
+  <%= 'Great!' %>
+<% elsif @message.end_with?('?') %>
+  <%= 'Silly question, get dressed and go to work!' %>
+<% elsif !@message.end_with?('?') %>
+  <%= "I don't care, get dressed and go to work!" %>
+<% end %>
